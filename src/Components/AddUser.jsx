@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { v4 as uuid } from 'uuid'
 
+// Comp to handle new user addition
 export default function AddUser({hideFillAddUser, addNewUser}) {
   const id = uuid().slice(0,6)
   const [name, setName] = useState("")

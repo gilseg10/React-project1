@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 
+// Comp to handle a user appearance and properties
+// also handle update, delete and orange highlight status
 export default function User({user_info, handleUpdate, handleDelete, showTodosPosts, chosenUserId, isNewUserOpen}) {
   const [isCompleated, setIsCompleated] = useState(false)
   const [otherData, setOtherData] = useState(false)

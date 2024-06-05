@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { getUsersData } from "../utils"
 import User from "./User";
 
+// NOT IN USE
 export default function Users({users, handleUpdate, handleDelete, showTodosPosts, chosenUserId}) {
 
   return (

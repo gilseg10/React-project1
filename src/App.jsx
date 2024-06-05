@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { getUsersData, getUserTodos, getUserPosts } from "./utils"
 import './App.css'
-import Users from './Components/Users'
 import TodosPosts from "./Components/TodosPosts";
 import User from "./Components/User";
 import AddUser from "./Components/AddUser";
 import LoadingSpinner from "./Components/LoadingSpinner";
 
+// Main App
 function App() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("")
@@ -16,6 +16,7 @@ function App() {
   const [userTodos, setUserTodos] = useState([])
   const [userPosts, setUserPosts] = useState([])
 
+  // fetching the users and their data
   useEffect(() => {
     const fetchData = async () => {
       const users_info = await getUsersData()
@@ -24,7 +25,7 @@ function App() {
     fetchData()
   }, []);
 
-  // filter the users according to username and email and pass it on to Users comp
+  // filter the users according to username and email
   const filteredUsers = users.filter(user => {
     const username = user.name.toLocaleLowerCase()
     const useremail = user.email.toLocaleLowerCase()
@@ -41,45 +42,49 @@ function App() {
     }))
   }
 
+  // Delete user and close his section of todos-posts
   const handleDelete = (id) => {
     setUsers(users.filter(user => user.id !== id))
     if (chosenUserId === id && showTP)
       setShowTP(false)
   }
-
+  
+  // CLOSE the todos-posts section and SHOW 'add user' section
   const showFillAddUser = () => {
     setShowTP(false)
     setShowAddUser(true)
   }
 
+  // SHOW the todos-posts section and CLOSE 'add user' section
   const hideFillAddUser = () => {
     setShowAddUser(false)
     setChosenUserId(0)
   }
 
-  // function to transfer to User comp to handle the showing of todos and posts
+  // function to transfer to User comp to handle the showing of todos-posts
   const showTodosPosts = async (id) => {
     const chosenUser = users.find(user => user.id === id)
     setUserTodos(chosenUser.todosUser)
     setUserPosts(chosenUser.postsUser)
     
     if (chosenUserId === id && showTP) { 
-      // if its the same user that we click on, we want to close his section of todos and posts
-      // and setTheChosenUserId to 0 to indicate no user todos/posts chosen
+      // if its the same user that we click, we close his todos-posts section 
+      // set the ChosenUserId to 0 to indicate no user's todos-posts was chosen
       setShowTP(false)
       setChosenUserId(0)
     }
-    else { // if its another user or the same as before (but with his section closed), we want to open his section of todos and posts
+    // if its another user or the same as before (but with his section closed), 
+    // we want to open his todos-posts section
+    else { 
       setShowTP(true)
       setShowAddUser(false)
-      // this is the id of the current user that his todos and posts are presented
+      // update the current user that his todos-posts section is presented
       setChosenUserId(id)
     }
   }
   
-  // function to update user's todo to "completed: true" and update all the users 
+  // function to update user's todo to "completed: true" and update the users state 
   const updateUsers = (user_id, todo_id) => {
-    // console.log(user_id, todo_id)
     setUsers(users.map(user => {
       if (user.id === user_id) {
         const updated_todos = user.todosUser.todos.map(todo => {
@@ -117,7 +122,7 @@ function App() {
     setUsers(new_users)
   }
   
-  // update the todos and posts that are presented in the todos-list when users state is updated
+  // update the todos-posts section when users state is updated
   useEffect(() => {
     const chosenUser = users.find(user => user.id === chosenUserId)
     setUserTodos(chosenUser?.todosUser)
@@ -126,7 +131,6 @@ function App() {
 
   return (
     <div>
-      {/* {console.log(users)} */}
       { users.length != 0 ? <div className="full_app"> 
         <div className="searchAndUsers">
           <div className="searchInput">

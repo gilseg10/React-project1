@@ -1,5 +1,6 @@
 import React from "react"
 
+// Comp to handle a post appearance
 export default function Posts({post}) {
   return (
     <div className="posts-div">

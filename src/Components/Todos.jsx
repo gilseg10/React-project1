@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
 
+// Comp to handle a todo appearance and 
+// to handle completed todo button
 export default function Todos({todo, updateUsers}) {
 
   const [todoInfo, setTodoInfo] = useState({})
@@ -15,7 +17,6 @@ export default function Todos({todo, updateUsers}) {
 
   return (
     <div className="todos-div">
-      {/* {console.log(todo)} */}
       <div className="todo-row">
         <span className="todo-label"><strong>Title: </strong>{todo.title}</span>
       </div>

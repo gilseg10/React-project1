@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { v4 as uuid } from 'uuid'
 
-
+// Comp to handle new todo for a user
 export default function AddTodo({userId, returnTodosList, addTodoOrPost}) {
   const [title, setTitle] = useState("")
   const [newTodo, setNewTodo] = useState({isTodo: true, userId, id: uuid(), title, completed: false})

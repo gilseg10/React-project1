@@ -4,6 +4,7 @@ import Posts from "./Posts"
 import AddTodo from "./AddTodo"
 import AddPost from "./AddPost"
 
+// Comp to handle the todos-posts section appearance
 export default function TodosPosts({userTodos, userPosts, updateUsers, addTodoOrPost}) {
   const [addNewTodo, setAddNewTodo] = useState(false)
   const [addNewPost, setAddNewPost] = useState(false)
@@ -20,7 +21,6 @@ export default function TodosPosts({userTodos, userPosts, updateUsers, addTodoOr
     <div className="todos-posts-div">
       {/* Todos Section */}
       <div className="todos-posts-header">
-        {/* {console.log(userTodos)} */}
         <label className="todos-posts-label">Todos - User {userTodos.userId}</label>
         { !addNewTodo && <button className="todos-posts-button" onClick={() => setAddNewTodo(true)}>Add</button> }
       </div>

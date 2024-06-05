@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { v4 as uuid } from 'uuid'
 
+// Comp to handle new post for a user
 export default function AddPost({userId, returnPostsList, addTodoOrPost}) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
