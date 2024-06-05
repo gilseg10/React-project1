@@ -1,0 +1,227 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+.full_app {
+  display: flex;
+  gap: 10px;
+}
+
+.searchAndUsers {
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.searchInput {
+  margin-bottom: 10px;
+}
+
+.scrollBarUsers {
+  flex-grow: 1; 
+  max-height: 100vh;
+  overflow-y: auto;
+  border: 1px solid #ccc; 
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.searchInput label {
+  flex: 0 0 60px; 
+  margin-right: 10px;
+}
+
+.searchInput input {
+  margin-right: 10px;
+}
+
+.todos-posts-button, .todo-row button, .searchInput button {
+  padding: 5px 10px;
+}
+
+.user-container {
+  background-color: white;
+  border: 4px solid red;
+  width: 400px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.user-container.completed {
+  border-color: green;
+}
+
+.user-container.highlighted {
+  background-color: #ffc664;
+}
+
+.clickable-label {
+  cursor: pointer; /* Indicates the label is clickable */
+  color: blue; /* Change text color to blue */
+  font-size: larger;
+}
+
+.clickable-label:hover {
+  color: rgb(139, 0, 0); /* Change text color on hover */
+}
+
+.addPost-row,
+.addTodo-row,
+.otherData-row,
+.user-row,
+.addUser-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.user-row label,
+.addTodo-row label, 
+.addPost-row label,
+.addUser-row label {
+  flex: 0 0 60px; 
+  margin-right: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.otherData-button {
+  background-color: lightgray
+}
+
+.otherData-div {
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 15px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.otherData-row label {
+  flex: 0 0 80px; 
+  margin-right: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  margin-left: 50%;
+}
+
+.addTodo-button-group, 
+.addPost-button-group,
+.addUser-button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 40px;
+  margin-left: 40%;
+}
+
+.todos-posts-div, .addUser-div {
+  margin-top: 60px;
+  margin-left: 50px;
+}
+
+.todos-posts-header, .buttons-row, .post-row, .todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px; 
+}
+
+.todos-posts-container, .addUser-container {
+  border: 2px solid black;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.todos-posts-container {
+  flex-grow: 1; 
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+.addUser-container {
+  margin: 30px;
+  padding: 30px;
+}
+
+.todos-posts-label {
+  font-weight: bold;
+}
+
+.posts-div, .todos-div {
+  border: 2px solid pink;
+  width: auto;
+  margin: 10px;
+  padding: 10px;
+}
+
+.addTodo-div, .addPost-div {
+  margin: 30px;
+  padding: 30px;
+}
+
+.post-label, .todo-label {
+  margin-left: 10px;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #0e1a24;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: rgb(233, 229, 1);
+  }
+}
