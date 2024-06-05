@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { getUsersData, getUserTodos, getUserPosts } from "./utils"
+import { getUsersData } from "./utils"
 import './App.css'
 import TodosPosts from "./Components/TodosPosts";
 import User from "./Components/User";

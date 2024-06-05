@@ -32,6 +32,7 @@ export default function AddUser({hideFillAddUser, addNewUser}) {
   
   return (
     <div className="addUser-div">
+      <strong>Add New User</strong>
       <div className="addUser-container">
         <div className="addUser-row">
           <label>Name: </label>

@@ -164,6 +164,7 @@ input {
 }
 
 .todos-posts-div, .addUser-div {
+  text-align: center;
   margin-top: 60px;
   margin-left: 50px;
 }
